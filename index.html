@@ -85,7 +85,7 @@
     }
     
     /* Melhorias Adicionadas */
-    .info-acrecimientos {
+    .info-acrimientos {
         background-color: #fff3cd;
         border-left: 4px solid #ffc107;
         padding: 1rem;
@@ -177,7 +177,7 @@
         <!-- Navegação por Abas -->
         <ul class="nav nav-tabs justify-content-center mb-4" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard-panel" type="button" role="tab" aria-controls="dashboard-panel" aria-selected="true">1. Dados do Militar</button>
+                <button class="nav-link active" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard-panel" type="button" role="tab" aria-controls="dashboard-panel" aria-selected="true">1. Dados do Militar e Resultados</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="simulacao-tab" data-bs-toggle="tab" data-bs-target="#simulacao-panel" type="button" role="tab" aria-controls="simulacao-panel" aria-selected="false">2. Simulação de Cenários</button>
@@ -458,22 +458,24 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="card p-4 rounded-3 shadow mb-4">
-                            <p class="text-muted">Este simulador foi desenvolvido para auxiliar militares do CBMMG a estimar suas datas de aposentadoria e abono de permanência, considerando as regras de transição vigentes.</p>
+                            <p class="text-muted">Este simulador foi desenvolvido para auxiliar militares do CBMMG a estimar suas datas de aposentadoria e abono de permanência, considerando as regras de transição.</p>
                             
                             <p class="text-muted"><strong>Passo a passo</strong> para usar a calculadora de Aposentadoria</p>
                             <ol>
                                 <li class="text-muted">Na aba <strong>"1. Dados do Militar e Resultados"</strong>, preencha suas informações básicas (data de nascimento, inclusão, sexo e outros dados).</li>
-                                <li class="text-muted">Após o cálculo inicial, a aba <strong>"2. Simulação de Cenários"</strong> será habilitada. Nela, você pode adicionar tempo averbado e férias não gozadas para ver como isso impacta sua data de aposentadoria.</li>
+                                <li class="text-muted">Após o cálculo inicial, a aba <strong>"2. Simulação de Cenários"</strong> será habilitada. Nela, você pode adicionar tempo averbado e férias.</li>
                                 <li class="text-muted">A aba <strong>"3. Informações e Ajuda"</strong> (esta aba) contém explicações detalhadas sobre as regras de aposentadoria e como o simulador funciona.</li>
                             </ol>
 
-                            <p><strong>Atenção:</strong> Os cenários simulados de contagem de tempo dependem das informações inseridas pelo usuário. As informações existentes no Sistema Informatizado de Gestão de Pessoas (SIGPE) do CBMMG devem ser consultadas para confirmação.</p>
+                            <p><strong>Atenção:</strong> Os cenários simulados de contagem de tempo dependem das informações inseridas pelo usuário. As informações existentes no Sistema Informático do CBMMG são as únicas fontes de consulta oficial.</p>
 
                             <h3 class="h6 mt-4 text-danger">Entendendo os Cálculos</h3>
                             <div class="accordion" id="calculosAccordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingCalculosUm">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalculosUm" aria-expanded="false" aria-controls="collapseCalculosUm">Aba 1: Dados do Militar</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalculosUm" aria-expanded="false" aria-controls="collapseCalculosUm">
+                                            O que significa cada um dos resultados iniciais?
+                                        </button>
                                     </h2>
                                     <div id="collapseCalculosUm" class="accordion-collapse collapse" aria-labelledby="headingCalculosUm" data-bs-parent="#calculosAccordion">
                                         <div class="accordion-body">
@@ -485,15 +487,15 @@
                                                 <dd>Mostra a data em que o militar será aposentado compulsoriamente, o que ocorrer primeiro:
                                                     <ul>
                                                         <li><strong>Por Idade:</strong> 65 anos (ou 70 para QOS/QOCPL).</li>
-                                                        <li><strong>Por Tempo de Serviço:</strong> 30 anos de serviço efetivo + pedágio de 17% (para quem ingressou antes da reforma de 2019) ou 35 anos de serviço.</li>
+                                                        <li><strong>Por Tempo de Serviço:</strong> 30 anos de serviço efetivo + pedágio de 17% (para quem ingressou antes da reforma de 2019) ou 35 anos (pós-reforma).</li>
                                                     </ul>
                                                 </dd>
 
                                                 <dt>Data de Direito ao Abono de Permanência:</dt>
-                                                <dd>Indica a data em que o militar atinge os requisitos para a aposentadoria compulsória por tempo de serviço. A partir deste momento, se continuar na ativa, passa a ter direito ao abono de permanência.</dd>
+                                                <dd>Indica a data em que o militar atinge os requisitos para a aposentadoria compulsória por tempo de serviço. A partir deste momento, se continuar na ativa, receberá o abono.</dd>
 
                                                 <dt>Dias de pedágio:</dt>
-                                                <dd>Calcula o pedágio de 17% que incide sobre o tempo que faltava para o militar completar 30 anos na data de 01/01/2022. Aplicável apenas para quem ingressou antes da reforma de 2019.</dd>
+                                                <dd>Calcula o pedágio de 17% que incide sobre o tempo que faltava para o militar completar 30 anos na data de 01/01/2022. Aplicável apenas para quem ingressou antes de 2019.</dd>
 
                                                 <dt>Detalhamento dos Quinquênios:</dt>
                                                 <dd>Lista as datas exatas em que o militar adquiriu (ou irá adquirir) cada período de 5 anos de serviço efetivo.</dd>
@@ -504,7 +506,9 @@
 
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingCalculosDois">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalculosDois" aria-expanded="false" aria-controls="collapseCalculosDois">Aba 2: Simulação de Cenários</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalculosDois" aria-expanded="false" aria-controls="collapseCalculosDois">
+                                            O que significa cada um dos 5 cenários de simulação?
+                                        </button>
                                     </h2>
                                     <div id="collapseCalculosDois" class="accordion-collapse collapse" aria-labelledby="headingCalculosDois" data-bs-parent="#calculosAccordion">
                                         <div class="accordion-body">
@@ -516,7 +520,7 @@
                                                 <dd>Mostra a data em que o militar atinge a idade limite (65 ou 70 anos), independentemente do tempo de serviço.</dd>
 
                                                 <dt>Cenário 3 - Aposentadoria Voluntária Antecipada:</dt>
-                                                <dd>Calcula a data mais próxima para aposentadoria voluntária, usando todos os tempos disponíveis (averbado e férias em dobro) para cumprir os requisitos mais cedo.</dd>
+                                                <dd>Calcula a data mais próxima para aposentadoria voluntária, usando todos os tempos disponíveis (averbado e férias em dobro) para cumprir os requisitos mínimos.</dd>
 
                                                 <dt>Cenário 4 - Aposentadoria Voluntária com Todos os Direitos:</dt>
                                                 <dd>Similar ao Cenário 3, mas garante que a data de aposentadoria seja igual ou posterior à data de aquisição do 6º quinquênio (30 anos de serviço).</dd>
@@ -533,7 +537,9 @@
                             <div class="accordion" id="faqAccordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Quais são os principais requisitos para a aposentadoria voluntária?</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            Quais são os requisitos para aposentadoria voluntária?
+                                        </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
@@ -542,73 +548,83 @@
                                                 <li><strong>Militares incluídos APÓS 17/12/2019 (Regra Geral):</strong> É necessário completar <strong>35 anos de tempo de serviço</strong>.</li>
                                                 <li class="mt-2"><strong>Militares incluídos ATÉ 17/12/2019 (Regras de Transição):</strong>
                                                     <ul>
-                                                        <li><strong>Para homens:</strong> É necessário completar <strong>30 anos de serviço</strong> e cumprir um <strong>pedágio de 17%</strong> sobre o tempo que faltava para atingir 30 anos em 01/01/2022.</li>
-                                                        <li><strong>Para mulheres:</strong> É necessário completar <strong>25 anos de serviço</strong>. Se este tempo não foi completado até 31/12/2021, é acrescido um <strong>acréscimo progressivo de 4 meses por ano</strong> faltante, limitado a 60 meses.</li>
+                                                        <li><strong>Para homens:</strong> É necessário completar <strong>30 anos de serviço</strong> e cumprir um <strong>pedágio de 17%</strong> sobre o tempo faltante.</li>
+                                                        <li><strong>Para mulheres:</strong> É necessário completar <strong>25 anos de serviço</strong>. Se este tempo não foi completado até 31/12/2021, acrescenta-se até 60 meses adicionais.</li>
                                                     </ul>
                                                 </li>
                                             </ul>
-                                            <p class="mt-3"><strong>Importante:</strong> O simulador permite antecipar a data de aposentadoria voluntária (Cenário 3) utilizando tempo averbado e férias não gozadas (contadas em dobro).</p>
+                                            <p class="mt-3"><strong>Importante:</strong> O simulador permite antecipar a data de aposentadoria voluntária (Cenário 3) utilizando tempo averbado e férias não gozadas.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Como o tempo averbado e as férias convertidas impactam minha aposentadoria?</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Como funcionam o tempo averbado e as férias não gozadas?
+                                        </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            <p>Tanto o <strong>tempo averbado</strong> quanto as <strong>férias não gozadas</strong> (anuais e prêmio) funcionam como um "crédito" de tempo que pode ser usado para antecipar sua data de aposentadoria.</p>
+                                            <p>Tanto o <strong>tempo averbado</strong> quanto as <strong>férias não gozadas</strong> (anuais e prêmio) funcionam como um "crédito" de tempo que pode ser utilizado para antecipar a aposentadoria.</p>
                                             <p>O simulador aplica as seguintes regras na aba "Simulação de Cenários":</p>
                                             <ul>
-                                                <li><strong>Tempo Averbado:</strong> É o tempo de serviço de outras instituições (públicas ou privadas) que foi oficialmente reconhecido e somado ao seu tempo de serviço no CBMMG.</li>
-                                                <li class="mt-2"><strong>Férias Convertidas:</strong> Férias anuais e férias-prêmio não gozadas podem ser convertidas em tempo de serviço. Conforme a legislação, o simulador calcula esse tempo em dobro.</li>
+                                                <li><strong>Tempo Averbado:</strong> É o tempo de serviço de outras instituições (públicas ou privadas) que foi oficialmente reconhecido e somado ao tempo de serviço do CBMMG.</li>
+                                                <li class="mt-2"><strong>Férias Convertidas:</strong> Férias anuais e férias-prêmio não gozadas podem ser convertidas em tempo de serviço. Conforme a legislação, cada dia de férias é convertido em 2 dias de tempo de serviço.</li>
                                             </ul>
-                                            <p class="mt-3">Ao preencher esses campos na simulação, você verá nos <strong>Cenários 3, 4 e 5</strong> como a data projetada para a sua aposentadoria é antecipada, refletindo o uso desses tempos extras.</p>
+                                            <p class="mt-3">Ao preencher esses campos na simulação, você verá nos <strong>Cenários 3, 4 e 5</strong> como a data projetada para a sua aposentadoria pode ser antecipada.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Por que existe um cenário específico para "garantir o 6º quinquênio"?</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            O que é o 6º quinquênio e por que é importante?
+                                        </button>
                                     </h2>
                                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            <p>O 6º quinquênio é um adicional de tempo de serviço adquirido ao completar <strong>30 anos de efetivo serviço</strong>. Ele pode ter implicações na remuneração e nos direitos do militar.</p>
-                                            <p>O <strong>Cenário 3 (Aposentadoria Voluntária Antecipada)</strong> busca a data mais próxima possível para se aposentar, usando todos os tempos extras. Em alguns casos, isso pode fazer o militar se aposentar ANTES de adquirir o 6º quinquênio.</p>
-                                            <p>O <strong>Cenário 4 (Aposentadoria Voluntária com Todos os Direitos)</strong> foi criado para evitar isso. Ele calcula a data de aposentadoria garantindo que ela só ocorra <strong>após o 6º quinquênio ser adquirido</strong>.</p>
+                                            <p>O 6º quinquênio é um adicional de tempo de serviço adquirido ao completar <strong>30 anos de efetivo serviço</strong>. Ele pode ter implicações na composição de benefícios, dependendo da legislação aplicável.</p>
+                                            <p>O <strong>Cenário 3 (Aposentadoria Voluntária Antecipada)</strong> busca a data mais próxima possível para se aposentar, usando todos os tempos extras. Porém, isto pode resultar em perda de direitos.</p>
+                                            <p>O <strong>Cenário 4 (Aposentadoria Voluntária com Todos os Direitos)</strong> foi criado para evitar isso. Ele calcula a data de aposentadoria garantindo que você adquira o 6º quinquênio.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingFive">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">O que é o Abono de Permanência e como o simulador o calcula?</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            O que é o Abono de Permanência?
+                                        </button>
                                     </h2>
                                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            <p>O Abono de Permanência é um benefício financeiro pago ao militar que já cumpriu todos os requisitos para se aposentar voluntariamente, mas decide continuar em serviço ativo.</p>
+                                            <p>O Abono de Permanência é um benefício financeiro pago ao militar que já cumpriu todos os requisitos para se aposentar voluntariamente, mas decide continuar na ativa.</p>
                                             <p>O simulador calcula a data de direito a este abono de duas formas:</p>
                                             <ul>
-                                                <li><strong>Na aba "Dados do Militar":</strong> Mostra a data de direito ao abono sem considerar tempos extras, atrelada à data da aposentadoria compulsória por tempo de serviço.</li>
-                                                <li><strong>No Cenário 5 da simulação:</strong> Mostra a data de direito ao abono <strong>antecipada</strong> pelo uso de tempo averbado e férias convertidas. Esta é a data mais otimista para adquirir o direito.</li>
+                                                <li><strong>Na aba "Dados do Militar":</strong> Mostra a data de direito ao abono sem considerar tempos extras, atrelada à data da aposentadoria compulsória.</li>
+                                                <li><strong>No Cenário 5 da simulação:</strong> Mostra a data de direito ao abono <strong>antecipada</strong> pelo uso de tempo averbado e férias não gozadas.</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingSix">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">O que é a "Data com arredondamento de 182 dias"?</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                            O que é a regra de arredondamento?
+                                        </button>
                                     </h2>
                                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            <p>A regra de arredondamento é um dispositivo legal que, em alguns contextos, permite que uma fração de ano igual ou superior a 182 dias (aproximadamente 6 meses) seja contada como um ano completo.</p>
-                                            <p>No simulador, aplicamos essa lógica de forma prática: mostramos a data projetada para a aposentadoria e, logo abaixo, uma data <strong>antecipada em 182 dias</strong>. Essa "data com arredondamento" representa uma data possível caso essa regra se aplique ao seu caso específico.</p>
+                                            <p>A regra de arredondamento é um dispositivo legal que, em alguns contextos, permite que uma fração de ano igual ou superior a 182 dias (aproximadamente meio ano) seja contabilizada como um ano completo.</p>
+                                            <p>No simulador, aplicamos essa lógica de forma prática: mostramos a data projetada para a aposentadoria e, logo abaixo, uma data <strong>antecipada em 182 dias</strong> (caso se aplique o arredondamento).</p>
                                             <p>Ela aparece destacada tanto no direito ao Abono de Permanência inicial quanto em todos os cenários de aposentadoria voluntária na aba de simulação.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Qual é a legislação aplicável à aposentadoria dos Militares de Minas Gerais?</button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Qual é a legislação aplicável?
+                                        </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
@@ -855,22 +871,19 @@
             },
             voluntariaAntecipada: {
                 date: voluntariaAntecipada.dataProjetada,
-                body: `Usa tempo averbado e férias para antecipar a data.  
-<strong>Regra Aplicada:</strong> ${voluntariaAntecipada.observacao}`,
+                body: `Usa tempo averbado e férias para antecipar a data.<br><strong>Regra Aplicada:</strong> ${voluntariaAntecipada.observacao}`,
                 arredondamento: voluntariaAntecipada.dataComArredondamento
             },
             voluntariaComDireitos: {
                 date: dataFinalVoluntariaDireitos,
                 body: `Garante o 6º quinquênio (adquirido em ${formatarData(dataSextoQuinquenio)}).` + 
                       (dataFinalVoluntariaDireitos.getTime() > voluntariaAntecipada.dataProjetada.getTime() ? ` A data foi postergada para garantir o quinquênio.` : '') +
-                      `  
-<strong>Regra Aplicada:</strong> ${voluntariaAntecipada.observacao}`,
+                      `<br><strong>Regra Aplicada:</strong> ${voluntariaAntecipada.observacao}`,
                 arredondamento: dataComArredondamentoDireitos
             },
             abonoPermanencia: {
                 date: voluntariaAntecipada.dataProjetada,
-                body: `Data em que o militar cumpre os requisitos para a aposentadoria voluntária e pode optar por permanecer na ativa recebendo o abono.  
-<strong>Regra Aplicada:</strong> ${voluntariaAntecipada.observacao}`,
+                body: `Data em que o militar cumpre os requisitos para a aposentadoria voluntária e pode optar por permanecer na ativa recebendo o abono.<br><strong>Regra Aplicada:</strong> ${voluntariaAntecipada.observacao}`,
                 arredondamento: voluntariaAntecipada.dataComArredondamento
             }
         };
@@ -972,7 +985,7 @@
         for (let i = 1; i <= 7; i++) {
             const dataQ = addYMD(inputs.dataInclusao, i * 5);
             const status = dataQ <= dataDeHoje ? 'Adquirido' : 'Previsto';
-            quinqueniosHtml += `<div class="row align-items-center mb-1"><div class="col-4">${i}º Quinquênio:</div><div class="col-4 text-center">${formatarData(dataQ)}</div><div class="col-4 text-end"><small class="badge ${status === 'Adquirido' ? 'bg-success' : 'bg-warning'}">${status}</small></div></div>`;
+            quinqueniosHtml += `<div class="row align-items-center mb-1"><div class="col-4">${i}º Quinquênio:</div><div class="col-4 text-center">${formatarData(dataQ)}</div><div class="col-4 text-end"><span class="badge ${status === 'Adquirido' ? 'bg-success' : 'bg-warning'}">${status}</span></div></div>`;
         }
         document.getElementById('quinqueniosLista').innerHTML = quinqueniosHtml;
 
@@ -1000,7 +1013,7 @@
         document.getElementById('resumoTempoAverbado').textContent = `${diasAverbadoTotal} dias`;
         document.getElementById('resumoFeriasAn').textContent = `${feriasAnConverti} dias`;
         document.getElementById('resumoFeriasPremi').textContent = `${feriasPremioConverti} dias`;
-        document.getElementById('resumoTotalAcreci').innerHTML = `<strong>${totalAcreci} dias</strong>`;
+        document.getElementById('resumoTotalAcreci').textContent = `${totalAcreci} dias`;
 
         if (totalAcreci > 0) {
             document.getElementById('resumoParametros').style.display = 'block';
@@ -1009,110 +1022,82 @@
         }
     }
 
-    function renderSimulationResults(results, inputsComAcreci) {
+    function renderSimulacaoCenarios(scenarios, inputs) {
         const dataDeHoje = new Date();
-        const scenarios = [
-            { title: '1 - Aposentadoria Compulsória por Tempo de Serviço', ...results.compulsoriaPorTempo },
-            { title: '2 - Aposentadoria Compulsória por Idade', ...results.compulsoriaPorIdade },
-            { title: '3 - Aposentadoria Voluntária Antecipada', ...results.voluntariaAntecipada },
-            { title: '4 - Aposentadoria Voluntária com Todos os Direitos', ...results.voluntariaComDireitos },
-            { title: '5 - Direito ao Abono de Permanência (Antecipado)', ...results.abonoPermanencia },
-        ];
-
-        // Encontrar a data mais próxima (melhor opção)
-        const datas = scenarios.map(s => s.date.getTime());
-        const dataMaisProxima = Math.min(...datas);
-        const indiceMelhor = datas.indexOf(dataMaisProxima);
-
-        // 1. ATUALIZAR TEMPO DE SERVIÇO COM ACRÉCIMOS
-        const tempoSemAcreci = calcTempoServico({ 
-            dataInclusao: inputsComAcreci.dataInclusao, 
-            dataReferencia: dataDeHoje 
+        const tempoServicoSemAcrec = calcTempoServico({ dataInclusao: inputs.dataInclusao, dataReferencia: dataDeHoje });
+        const tempoServicoComAcrec = calcTempoServico({ 
+            dataInclusao: inputs.dataInclusao, 
+            dataReferencia: dataDeHoje,
+            averbado: inputs.averbado,
+            feriasDias: inputs.feriasDias,
+            feriasPremioDias: inputs.feriasPremioDias
         });
-        const tempoComAcreci = calcTempoServico(inputsComAcreci);
 
-        document.getElementById('tempoServicoSemAcr').textContent = `${tempoSemAcreci.ymd.years}a ${tempoSemAcreci.ymd.days}d`;
-        document.getElementById('tempoServicoComAcr').textContent = `${tempoComAcreci.ymd.years}a ${tempoComAcreci.ymd.days}d`;
+        const compulsoriaResult = calcAposentadoriaCompulsoria(inputs);
+        const abonoSemAcrec = calcAbonoPermanencia({ dataCompulsoria: compulsoriaResult.dataFinal });
+
+        // Atualizar tempo de serviço
+        document.getElementById('tempoServicoSemAcr').textContent = `${tempoServicoSemAcrec.ymd.years} anos e ${tempoServicoSemAcrec.ymd.days} dias`;
+        document.getElementById('tempoServicoComAcr').textContent = `${tempoServicoComAcrec.ymd.years} anos e ${tempoServicoComAcrec.ymd.days} dias`;
         document.getElementById('cardTempoComAcreci').style.display = 'block';
 
-        // 2. ATUALIZAR ABONO DE PERMANÊNCIA COM ACRÉCIMOS
-        const abonoComAcreci = calcAbonoPermanencia({ dataCompulsoria: results.abonoPermanencia.date });
-        const abonoPermanenciaSemAcr = document.getElementById('dataAbonoPermanencia').textContent;
-
-        document.getElementById('abonoSemAcr').textContent = abonoPermanenciaSemAcr;
-        document.getElementById('abonoComAcr').textContent = formatarData(results.abonoPermanencia.date);
-        
-        const diasAntecipacao = daysBetween(results.abonoPermanencia.date, parseDateFromInput(abonoPermanenciaSemAcr));
-        if (diasAntecipacao > 0) {
-            document.getElementById('diasAntecipacaoAbono').textContent = `Antecipação: ${diasAntecipacao} dias`;
-            document.getElementById('diasAntecipacaoAbono').style.display = 'block';
-        }
+        // Atualizar abono de permanência
+        document.getElementById('abonoSemAcr').textContent = formatarData(abonoSemAcrec.dataBase);
+        document.getElementById('abonoComAcr').textContent = formatarData(scenarios.abonoPermanencia.date);
+        const diasAntecipacao = daysBetween(scenarios.abonoPermanencia.date, abonoSemAcrec.dataBase);
+        document.getElementById('diasAntecipacaoAbono').textContent = diasAntecipacao > 0 ? `Antecipação de ${diasAntecipacao} dias` : '';
         document.getElementById('cardAbonoComAcr').style.display = 'block';
 
-        // 3. TABELA COMPARATIVA
-        let tabelaHtml = '';
-        scenarios.forEach((s, idx) => {
-            const ehMelhor = idx === indiceMelhor;
-            const classeMelhor = ehMelhor ? 'melhor-opcao' : '';
+        // Tabela comparativa
+        const tabelaBody = document.getElementById('tabelaComparativaBody');
+        tabelaBody.innerHTML = '';
+
+        const scenarioNames = ['Compulsória por Tempo', 'Compulsória por Idade', 'Voluntária Antecipada', 'Voluntária com Todos os Direitos', 'Abono de Permanência'];
+        const scenarioKeys = ['compulsoriaPorTempo', 'compulsoriaPorIdade', 'voluntariaAntecipada', 'voluntariaComDireitos', 'abonoPermanencia'];
+        
+        let melhorData = scenarios.voluntariaAntecipada.date;
+
+        scenarioKeys.forEach((key, index) => {
+            const scenario = scenarios[key];
+            const antecipacao = daysBetween(scenario.date, scenarios.compulsoriaPorTempo.date);
+            const isMelhor = scenario.date < melhorData;
+            if (isMelhor && key !== 'compulsoriaPorTempo' && key !== 'compulsoriaPorIdade') melhorData = scenario.date;
             
-            // Calcular dias de antecipação em relação à compulsória por tempo
-            const diasAnt = daysBetween(s.date, results.compulsoriaPorTempo.date);
-            const textoAnt = diasAnt < 0 ? `${Math.abs(diasAnt)} dias depois` : `${diasAnt} dias antes`;
-
-            tabelaHtml += `
-                <tr class="${classeMelhor}">
-                    <td><strong>${s.title.split(' - ')[0]}</strong>${ehMelhor ? '<br><span class="badge bg-success">Melhor</span>' : ''}</td>
-                    <td>${formatarData(s.date)}</td>
-                    <td class="${diasAnt < 0 ? '' : 'dias-antecipacao'}">${textoAnt}</td>
-                </tr>
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${scenarioNames[index]}</td>
+                <td class="${isMelhor ? 'melhor-opcao' : ''}">${formatarData(scenario.date)}</td>
+                <td>${antecipacao > 0 ? `${antecipacao} dias` : '—'}</td>
             `;
+            tabelaBody.appendChild(row);
         });
-        document.getElementById('tabelaComparativaBody').innerHTML = tabelaHtml;
-
-        // Texto explicativo da melhor opção
-        const cenarioMelhor = scenarios[indiceMelhor];
-        const textoMelhor = `
-            <strong>✅ Melhor opção:</strong> ${cenarioMelhor.title}<br>
-            <small>Você se aposentaria em ${formatarData(cenarioMelhor.date)}. 
-            Isso representa ${daysBetween(cenarioMelhor.date, results.compulsoriaPorTempo.date)} dias de antecipação em relação à compulsória por tempo de serviço.</small>
-        `;
-        document.getElementById('textoMelhorOpcao').innerHTML = textoMelhor;
-        document.getElementById('textoMelhorOpcao').style.display = 'block';
         document.getElementById('cardTabelaComparativa').style.display = 'block';
 
-        // 4. RESULTADOS DETALHADOS
-        let allHtml = '';
-        scenarios.forEach((s, idx) => {
-            const ehMelhor = idx === indiceMelhor;
-            const arredondamentoHtml = s.arredondamento ? `
-                <div class="col-12 mt-2">
-                    <div class="alert alert-info-custom p-2">
-                        <small class="text-muted fw-bold">Data com arredondamento (${CONFIG.DIAS_ARREDONDAMENTO} dias):</small>
-                        <p class="fw-bold mb-0">${formatarData(s.arredondamento)}</p>
-                    </div>
-                </div>` : '';
+        // Resultados detalhados
+        const container = document.getElementById('cenariosResultadosContainer');
+        container.innerHTML = '';
 
-            const badgeMelhor = ehMelhor ? '<span class="badge badge-melhor">MELHOR</span>' : '';
+        scenarioKeys.forEach((key, index) => {
+            const scenario = scenarios[key];
+            const div = document.createElement('div');
+            div.className = 'mb-4 p-3 bg-light rounded';
             
-            allHtml += `
-                <div class="card bg-light p-3 rounded-md mb-3" style="${ehMelhor ? 'border: 2px solid #20c997; background-color: #d1f2eb !important;' : ''}">
-                    <h5 class="text-danger mb-2">${s.title} ${badgeMelhor}</h5>
-                    <div class="row">
-                        <div class="col-md-6 mb-2">
-                            <strong>Data:</strong><br>
-                            <span class="fw-bold">${formatarData(s.date)}</span>
-                        </div>
-                        <div class="col-md-6 mb-2">
-                            <strong>Detalhes:</strong><br>
-                            <small>${s.body}</small>
-                        </div>
-                    </div>
-                    ${arredondamentoHtml}
-                </div>
-            `;
-        });
+            let arredondamentoHtml = '';
+            if (scenario.arredondamento) {
+                const diasDif = daysBetween(scenario.arredondamento, scenario.date);
+                if (diasDif > 0) {
+                    arredondamentoHtml = `<div class="alert alert-warning mt-2"><strong>Regra de Arredondamento:</strong> Considerando 182 dias, a data poderia ser antecipada para <strong>${formatarData(scenario.arredondamento)}</strong></div>`;
+                }
+            }
 
-        document.getElementById('cenariosResultadosContainer').innerHTML = allHtml;
+            div.innerHTML = `
+                <h5 class="text-danger">Cenário ${index + 1} - ${scenarioNames[index]}</h5>
+                <p><strong>Data de Saída:</strong> ${formatarData(scenario.date)}</p>
+                <p>${scenario.body}</p>
+                ${arredondamentoHtml}
+            `;
+            container.appendChild(div);
+        });
         document.getElementById('resultadosSimulacao').style.display = 'block';
     }
 
@@ -1124,35 +1109,41 @@
         e.preventDefault();
         toggleButtonProcessing('calcularInformacoesBtn', true);
         
-        setTimeout(() => {
-            const inputs = getInputs(true);
-            if (inputs) {
-                renderInitialResults(inputs);
-            }
+        const inputs = getInputs(true);
+        if (!inputs) {
             toggleButtonProcessing('calcularInformacoesBtn', false);
-        }, 500);
+            return;
+        }
+
+        setTimeout(() => {
+            renderInitialResults(inputs);
+            toggleButtonProcessing('calcularInformacoesBtn', false);
+        }, 300);
     });
 
-    // Atualizar resumo de parâmetros em tempo real
-    document.querySelectorAll('.parametro-simulacao').forEach(elem => {
-        elem.addEventListener('input', atualizarResumoParametros);
+    // Atualizar resumo de parâmetros quando os inputs mudam
+    document.querySelectorAll('.parametro-simulacao').forEach(input => {
+        input.addEventListener('change', atualizarResumoParametros);
+        input.addEventListener('input', atualizarResumoParametros);
     });
 
+    // Botão simular cenários
     document.getElementById('simularTodosCenarios').addEventListener('click', function() {
         toggleButtonProcessing('simularTodosCenarios', true);
-        
-        setTimeout(() => {
-            const inputs = getInputs(false);
-            if (inputs) {
-                const results = simulateAllScenarios(inputs);
-                renderSimulationResults(results, inputs);
-            }
-            toggleButtonProcessing('simularTodosCenarios', false);
-        }, 500);
-    });
 
+        const inputs = getInputs(false);
+        if (!inputs) {
+            toggleButtonProcessing('simularTodosCenarios', false);
+            return;
+        }
+
+        setTimeout(() => {
+            const scenarios = simulateAllScenarios(inputs);
+            renderSimulacaoCenarios(scenarios, inputs);
+            toggleButtonProcessing('simularTodosCenarios', false);
+        }, 300);
+    });
 })();
 </script>
-
 </body>
 </html>
