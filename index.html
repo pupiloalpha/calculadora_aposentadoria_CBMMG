@@ -17,35 +17,138 @@
     }
     .navbar { background-color: #dc3545 !important; }
     .navbar-brand { color: #fff !important; }
-    .footer { background-color: #343a40; color: #fff; padding: 1rem 0; text-align: center; margin-top: auto; }
-    .nav-link.active { color: #0d6efd !important; border-bottom: 4px solid #0d6efd; font-weight: 600; }
-    .nav-link { color: #6c757d; transition: all 0.3s ease; padding-bottom: 0.75rem; }
+    .footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+        margin-top: auto;
+    }
+    .nav-link.active {
+        color: #0d6efd !important;
+        border-bottom: 4px solid #0d6efd;
+        font-weight: 600;
+    }
+    .nav-link {
+        color: #6c757d;
+        transition: all 0.3s ease;
+        padding-bottom: 0.75rem;
+    }
     .nav-link:hover { color: #0a58ca; }
-    .container-fluid { flex-grow: 1; }
-    .tab-content { background-color: #ffffff; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1 ), 0 4px 6px -2px rgba(0, 0, 0, 0.05); padding: 1.5rem; margin-top: 1rem; margin-bottom: 2rem; display: flex; flex-grow: 1; }
+    .container-fluid {
+        flex-grow: 1;
+    }
+    .tab-content {
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1 ), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-grow: 1;
+    }
     .simulation-results-card { border-left: 5px solid #dc3545; }
-    .alert-info-custom { background-color: #e9ecef; border-color: #ced4da; color: #495057; border-radius: 0.5rem; }
+    .alert-info-custom {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        color: #495057;
+        border-radius: 0.5rem;
+    }
     .form-control.rounded-md, .form-select.rounded-md { border-radius: 0.375rem !important; }
     .card.rounded-3 { border-radius: 0.75rem !important; }
     .card.rounded-md { border-radius: 0.5rem !important; }
-    .spinner-border-sm { display: none; }
-    .btn.processing .spinner-border-sm { display: inline-block; }
-    .btn.processing .btn-text { margin-left: 0.5rem; }
-    .fade-in { animation: fadeIn 0.5s ease-in-out; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .highlight-tab { animation: pulse 1.5s 2; }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); } }
-    .tabela-comparativa { font-size: 0.9rem; }
-    .tabela-comparativa th { background-color: #dc3545; color: white; text-align: center; }
-    .tabela-comparativa td { text-align: center; vertical-align: middle; }
-    .melhor-opcao { background-color: #d1f2eb; border: 2px solid #20c997; font-weight: 600; }
-    .dias-antecipacao { color: #20c997; font-weight: 600; }
-    .resumo-parametros { background-color: #e7f3ff; border-left: 4px solid #0d6efd; padding: 1rem; border-radius: 0.375rem; margin-bottom: 1rem; }
-    .resumo-parametros-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem; }
-    .resumo-parametros-label { font-weight: 600; color: #495057; }
-    .resumo-parametros-valor { color: #0d6efd; font-weight: 600; }
-    .arredondamento-badge { display: inline-block; background-color: #ffc107; color: #000; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.85rem; font-weight: 600; margin-top: 0.25rem; }
+    .spinner-border-sm {
+        display: none;
+    }
+    .btn.processing .spinner-border-sm {
+        display: inline-block;
+    }
+    .btn.processing .btn-text {
+        margin-left: 0.5rem;
+    }
+    .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .highlight-tab {
+        animation: pulse 1.5s 2;
+    }
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
+        70% { box-shadow: 0 0 0 10px rgba(0, 123, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
+    }
+    .info-acrimientos {
+        background-color: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        border-radius: 0.375rem;
+        margin-top: 1rem;
+    }
+    .campo-grupo {
+        background-color: #f8f9fa;
+        padding: 0.5rem;
+        border-radius: 0.375rem;
+        margin-bottom: 1rem;
+    }
+    .tabela-comparativa {
+        font-size: 0.9rem;
+    }
+    .tabela-comparativa th {
+        background-color: #dc3545;
+        color: white;
+        text-align: center;
+    }
+    .tabela-comparativa td {
+        text-align: center;
+        vertical-align: middle;
+    }
+    .melhor-opcao {
+        background-color: #d1f2eb;
+        border: 2px solid #20c997;
+        font-weight: 600;
+    }
+    .dias-antecipacao {
+        color: #20c997;
+        font-weight: 600;
+    }
+    .resumo-parametros {
+        background-color: #e7f3ff;
+        border-left: 4px solid #0d6efd;
+        padding: 1rem;
+        border-radius: 0.375rem;
+        margin-bottom: 1rem;
+    }
+    .resumo-parametros-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+    }
+    .resumo-parametros-label {
+        font-weight: 600;
+        color: #495057;
+    }
+    .resumo-parametros-valor {
+        color: #0d6efd;
+        font-weight: 600;
+    }
+    .arredondamento-badge {
+        display: inline-block;
+        background-color: #ffc107;
+        color: #000;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-top: 0.25rem;
+    }
     </style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -226,6 +329,7 @@
                                         </div>
                                     </div>
                                 </fieldset>
+                                
                                 <div class="resumo-parametros" id="resumoParametros" style="display: none;">
                                     <div class="resumo-parametros-item">
                                         <span class="resumo-parametros-label">Tempo Averbado Total:</span>
@@ -245,6 +349,7 @@
                                         <span class="resumo-parametros-valor" id="resumoTotalAcreci"><strong>0 dias</strong></span>
                                     </div>
                                 </div>
+                                
                                 <hr class="my-4">
                                 <div class="d-grid gap-2">
                                     <button type="button" class="btn btn-success w-100 mt-3" id="simularTodosCenarios">
@@ -312,7 +417,8 @@
                                             <th>Antecipação</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tabelaComparativaBody"></tbody>
+                                    <tbody id="tabelaComparativaBody">
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -331,7 +437,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="card p-4 rounded-3 shadow mb-4">
-                            <p class="text-muted">Este simulador foi desenvolvido para auxiliar militares do CBMMG a estimar suas datas de aposentadoria e abono de permanência, considerando as regras de transição e a regra de arredondamento de 182 dias.</p>
+                            <p class="text-muted">Este simulador foi desenvolvido para auxiliar militares do CBMMG a estimar suas datas de aposentadoria e abono de permanência, considerando as regras de transi��ão e a regra de arredondamento de 182 dias.</p>
                             
                             <p class="text-muted"><strong>Passo a passo</strong> para usar a calculadora de Aposentadoria</p>
                             <ol>
@@ -382,7 +488,7 @@
                                                 <dt>Cenário 4 - Aposentadoria Voluntária com Todos os Direitos:</dt>
                                                 <dd>Similar ao Cenário 3, mas garante aquisição do 6º quinquênio (30 anos de serviço).</dd>
                                                 <dt>Cenário 5 - Direito ao Abono de Permanência (Antecipado):</dt>
-                                                <dd>Data exata em que passa a ter direito ao Abono, considerando antecipação por tempo averbado/férias. Na tabela comparativa, exibe-se com aplicação da regra de arredondamento.</dd>
+                                                <dd>Data exata em que passa a ter direito ao Abono, considerando antecipação por tempo averbado/férias.</dd>
                                             </dl>
                                         </div>
                                     </div>
@@ -432,7 +538,7 @@
                                     </h2>
                                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            <p>Benefício financeiro pago ao militar que cumpriu todos os requisitos para aposentadoria voluntária, mas decide continuar na ativa. Na aba 2, o Cenário 5 mostra a data antecipada considerando tempo averbado/férias, com aplicação da regra de arredondamento destacada em badge.</p>
+                                            <p>Benefício financeiro pago ao militar que cumpriu todos os requisitos para aposentadoria voluntária, mas decide continuar na ativa. Na aba 2, o Cenário 5 mostra a data antecipada considerando tempo averbado/férias, com aplicação da regra de arredondamento.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -442,7 +548,7 @@
                                     </h2>
                                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            <p>A regra de arredondamento permite que uma fração de ano igual ou superior a 182 dias seja contabilizada como um ano completo. Na aba 2, você verá a data com arredondamento em badge destacado (fundo amarelo) nas seções de "Tempo de Serviço Atualizado", "Abono de Permanência" e na tabela comparativa de cenários. Isso antecipa potencialmente a aposentadoria em até 182 dias.</p>
+                                            <p>A regra de arredondamento permite que uma fração de ano igual ou superior a 182 dias seja contabilizada como um ano completo. Na aba 2, você verá a data com arredondamento destacada em cada seção, antecipando potencialmente a aposentadoria em até 182 dias. A tabela comparativa usa as datas com arredondamento para análise.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -493,9 +599,11 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 <script>
 (function () {
     'use strict';
+
     const CONFIG = {
         EC13954_DATE: new Date('2019-12-17T00:00:00'),
         PEDAGIO_REFERENCE_DATE: new Date('2022-01-01T00:00:00'),
@@ -510,32 +618,366 @@
         IDADE_COMPULSORIA_QOS: 70,
     };
 
-    function parseDateFromInput(e){if(!e)return null;if(typeof e=='string'){let d=new Date(e+'T00:00:00');return isNaN(d.getTime())?null:d}if(e instanceof HTMLInputElement&&e.type==='date'){return e.valueAsDate?new Date(e.valueAsDate.getTime()):null}return e instanceof Date?new Date(e.getTime()):null}
-    function daysBetween(a,b){const s=Date.UTC(a.getFullYear(),a.getMonth(),a.getDate()),t=Date.UTC(b.getFullYear(),b.getMonth(),b.getDate());return Math.floor((t-s)/86400000)}
-    function addDays(d,n){const r=new Date(d);r.setDate(r.getDate()+n);return r}
-    function addYMD(d,y=0,m=0,s=0){const r=new Date(d);r.setFullYear(r.getFullYear()+y);r.setMonth(r.getMonth()+m);r.setDate(r.getDate()+s);return r}
-    function formatarData(d){if(!d||isNaN(d.getTime()))return'N/A';const a=String(d.getDate()).padStart(2,'0'),n=String(d.getMonth()+1).padStart(2,'0'),o=d.getFullYear();return`${a}/${n}/${o}`}
-    
-    function calcTempoServico({dataInclusao:a,dataReferencia:d,averbado:i,feriasDias:e,feriasPremioDias:t}){if(!a||!d)return{totalDias:0,ymd:{years:0,days:0}};const r=i?(i.years*CONFIG.DIAS_ANO_APROX)+(i.months*CONFIG.DIAS_MES_APROX)+i.days:0,s=daysBetween(a,d),o=(Number(e)||0)*2,c=(Number(t)||0)*2,l=Math.max(0,s+r+o+c),n=Math.floor(l/CONFIG.DIAS_ANO_APROX);return{totalDias:l,ymd:{years:n,days:l%CONFIG.DIAS_ANO_APROX}}}
-    function calcPedagioDias(a){const d=CONFIG.ANOS_BASE_TRANSICAO*CONFIG.DIAS_ANO_APROX,i=daysBetween(a,CONFIG.PEDAGIO_REFERENCE_DATE);return i>=d?0:Math.ceil((d-i)*CONFIG.PEDAGIO_RATE)}
-    function calcAbonoPermanencia({dataCompulsoria:a}){return a?{dataBase:a,dataComArredondamento:addDays(a,-CONFIG.DIAS_ARREDONDAMENTO)}:{dataBase:null,dataComArredondamento:null}}
-    function calcAposentadoriaCompulsoria({dataNascimento:a,dataInclusao:d,oficialSaudeCapelao:i}){if(!a||!d)return{dataFinal:null,regra:''};const e=i?CONFIG.IDADE_COMPULSORIA_QOS:CONFIG.IDADE_COMPULSORIA_GERAL,t=addYMD(a,e),r=`Compulsória por idade (${e} anos)`;let s,o;return d>CONFIG.EC13954_DATE?(s=addYMD(d,CONFIG.ANOS_REGRA_GERAL),o=`Regra Geral (${CONFIG.ANOS_REGRA_GERAL} anos de serviço)`):(const c=calcPedagioDias(d);s=addDays(addYMD(d,CONFIG.ANOS_BASE_TRANSICAO),c),o=`Regra de Transição (${CONFIG.ANOS_BASE_TRANSICAO} anos + ${c} dias de pedágio)`),s<t?{dataFinal:s,regra:o}:{dataFinal:t,regra:r}}
-    
-    function calcAposentadoriaVoluntaria({dataInclusao:a,sexo:d,averbado:i,feriasDias:e,feriasPremioDias:t}){let r,s='';const o=i?(i.years*CONFIG.DIAS_ANO_APROX)+(i.months*CONFIG.DIAS_MES_APROX)+i.days:0,c=(Number(e)||0)*2+(Number(t)||0)*2,l=o+c;if(a>CONFIG.EC13954_DATE){const n=addYMD(a,CONFIG.ANOS_REGRA_GERAL);r=addDays(n,-l),s=`Regra Pós-Reforma: ${CONFIG.ANOS_REGRA_GERAL} anos.`}else if(d==='feminino'){const n=CONFIG.ANOS_BASE_TRANSICAO_FEM*CONFIG.DIAS_ANO_APROX,m=daysBetween(a,CONFIG.PEDAGIO_REFERENCE_DATE);let p=0;if(m<n){const y=n-m,g=Math.floor(y/CONFIG.DIAS_ANO_APROX);p=Math.min(g*4,60),s=`Regra feminina: 25 anos + ${p} meses.`}else s=`Regra feminina: 25 anos (cumprido antes de 2022).`;const f=addYMD(a,CONFIG.ANOS_BASE_TRANSICAO_FEM,p);r=addDays(f,-l)}else{const n=calcPedagioDias(a);s=`Regra de Transição: 30 anos + ${n} dias pedágio.`;const m=addDays(addYMD(a,CONFIG.ANOS_BASE_TRANSICAO),n);r=addDays(m,-l)}return{dataProjetada:r,dataComArredondamento:addDays(r,-CONFIG.DIAS_ARREDONDAMENTO),observacao:s}}
+    function parseDateFromInput(elemOrValue) {
+        if (!elemOrValue) return null;
+        if (typeof elemOrValue === 'string') {
+            const d = new Date(elemOrValue + 'T00:00:00');
+            return isNaN(d.getTime()) ? null : d;
+        }
+        if (elemOrValue instanceof HTMLInputElement && elemOrValue.type === 'date') {
+            return elemOrValue.valueAsDate ? new Date(elemOrValue.valueAsDate.getTime()) : null;
+        }
+        if (elemOrValue instanceof Date) return new Date(elemOrValue.getTime());
+        return null;
+    }
 
-    function simulateAllScenarios(a){const d=calcAposentadoriaVoluntaria(a),i=addYMD(a.dataInclusao,CONFIG.ANOS_BASE_TRANSICAO),e=new Date(Math.max(d.dataProjetada,i)),t=addDays(e,-CONFIG.DIAS_ARREDONDAMENTO);let r,s;if(a.dataInclusao>CONFIG.EC13954_DATE)r=addYMD(a.dataInclusao,CONFIG.ANOS_REGRA_GERAL),s=`Regra Geral: ${CONFIG.ANOS_REGRA_GERAL} anos. Sem tempo averbado/férias.`;else{const o=calcPedagioDias(a.dataInclusao);r=addDays(addYMD(a.dataInclusao,CONFIG.ANOS_BASE_TRANSICAO),o),s=`Regra de Transição: 30 anos + ${o} dias pedágio. Sem tempo averbado/férias.`}const o=addYMD(a.dataNascimento,a.oficialSaudeCapelao?CONFIG.IDADE_COMPULSORIA_QOS:CONFIG.IDADE_COMPULSORIA_GERAL);return{compulsoriaPorTempo:{date:r,dateArred:r,body:s},compulsoriaPorIdade:{date:o,dateArred:o,body:`Idade: ${a.oficialSaudeCapelao?CONFIG.IDADE_COMPULSORIA_QOS:CONFIG.IDADE_COMPULSORIA_GERAL} anos.`},voluntariaAntecipada:{date:d.dataProjetada,dateArred:d.dataComArredondamento,body:`Com tempo averbado/férias.<br><strong>Regra:</strong> ${d.observacao}`,arredondamento:d.dataComArredondamento},voluntariaComDireitos:{date:e,dateArred:t,body:`Garante 6º quinquênio (${formatarData(i)}).`+(e.getTime()>d.dataProjetada.getTime()?' Postergada.':'')+`<br><strong>Regra:</strong> ${d.observacao}`,arredondamento:t},abonoPermanencia:{date:d.dataProjetada,dateArred:d.dataComArredondamento,body:`Direito ao Abono com tempo averbado/férias.<br><strong>Regra:</strong> ${d.observacao}`,arredondamento:d.dataComArredondamento}}}
+    function daysBetween(dateStart, dateEnd) {
+        const start = Date.UTC(dateStart.getFullYear(), dateStart.getMonth(), dateStart.getDate());
+        const end = Date.UTC(dateEnd.getFullYear(), dateEnd.getMonth(), dateEnd.getDate());
+        return Math.floor((end - start) / 86400000);
+    }
 
-    function toggleButtonProcessing(a,d){const i=document.getElementById(a);i&&(d?(i.classList.add('processing'),i.disabled=!0):(i.classList.remove('processing'),i.disabled=!1))}
-    function highlightTab(){const a=document.getElementById('simulacao-tab');a.classList.add('highlight-tab'),setTimeout(()=>{a.classList.remove('highlight-tab')},3000)}
-    function getInputs(a=!1){const d=parseDateFromInput(document.getElementById('dataNascimento')),i=parseDateFromInput(document.getElementById('dataInclusao')),e=document.getElementById('sexo').value;if(!d||!i||!e){const t=document.getElementById('customAlertMessage');return t.textContent='Preencha Data de Nascimento, Data de Inclusão e Sexo antes de continuar.',new bootstrap.Modal(document.getElementById('customAlert')).show(),null}const t={dataNascimento:d,dataInclusao:i,sexo:e,oficialSaudeCapelao:document.getElementById('oficialSaudeCapelao').checked};return a||((t.averbado={years:Number(document.getElementById('tempoAverbadoAnos').value)||0,months:Number(document.getElementById('tempoAverbadoMeses').value)||0,days:Number(document.getElementById('tempoAverbadoDias').value)||0}),t.feriasDias=Number(document.getElementById('feriasNaoGozadas').value)||0,t.feriasPremioDias=Number(document.getElementById('feriasPremioNaoGozadas').value)||0),t}
+    function addDays(date, days) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + days);
+        return d;
+    }
 
-    function renderInitialResults(a){const d=new Date(),i=calcTempoServico({dataInclusao:a.dataInclusao,dataReferencia:d});document.getElementById('tempoServicoAtual').textContent=`${i.ymd.years} anos e ${i.ymd.days} dias`,document.getElementById('tempoServicoAtualObs').textContent=`Na data de hoje ${formatarData(d)}`;const e=calcAposentadoriaCompulsoria(a);document.getElementById('dataAposentadoriaCompulsoria').textContent=formatarData(e.dataFinal),document.getElementById('regraAposentadoriaCompulsoria').textContent=e.regra;const t=calcAbonoPermanencia({dataCompulsoria:e.dataFinal});document.getElementById('dataAbonoPermanencia').textContent=formatarData(t.dataBase);const r=document.getElementById('dataAbonoPermanenciaArredondamento');if(r&&t.dataComArredondamento){const s=document.getElementById('dataAbonoPermanenciaArredondamentoLabel'),o=document.getElementById('dataAbonoPermanenciaArredondamentoValue');s&&(s.textContent='Com arredondamento (182 dias):'),o&&(o.textContent=formatarData(t.dataComArredondamento)),r.style.display='block'}else r&&(r.style.display='none');const s=document.getElementById('diasPedagio'),o=document.getElementById('diasPedagioObs');if(a.dataInclusao>CONFIG.EC13954_DATE)s.textContent='Não se aplica',o.textContent='Reforma 2019: sem pedágio.';else{const c=calcPedagioDias(a.dataInclusao);s.textContent=c>0?`${c} dias`:'0 dias',o.textContent='17% do tempo faltante em 01/01/2022.'}let c=`<div class="row fw-bold text-secondary border-bottom pb-1 mb-2"><div class="col-4">Período</div><div class="col-4 text-center">Data</div><div class="col-4 text-end">Status</div></div>`;for(let l=1;l<=7;l++){const n=addYMD(a.dataInclusao,5*l),m=n<=d?'Adquirido':'Previsto';c+=`<div class="row align-items-center mb-1"><div class="col-4">${l}º Quinq:</div><div class="col-4 text-center">${formatarData(n)}</div><div class="col-4 text-end"><span class="badge ${m==='Adquirido'?'bg-success':'bg-warning'}">${m}</span></div></div>`}document.getElementById('quinqueniosLista').innerHTML=c;const l=document.getElementById('callToActionSimulacao');l&&(l.style.display='block',l.classList.add('fade-in')),highlightTab()}
+    function addYMD(date, years = 0, months = 0, days = 0) {
+        const d = new Date(date);
+        d.setFullYear(d.getFullYear() + years);
+        d.setMonth(d.getMonth() + months);
+        d.setDate(d.getDate() + days);
+        return d;
+    }
 
-    function atualizarResumoParametros(){const a=Number(document.getElementById('tempoAverbadoAnos').value)||0,d=Number(document.getElementById('tempoAverbadoMeses').value)||0,i=Number(document.getElementById('tempoAverbadoDias').value)||0,e=Number(document.getElementById('feriasNaoGozadas').value)||0,t=Number(document.getElementById('feriasPremioNaoGozadas').value)||0,r=(a*CONFIG.DIAS_ANO_APROX)+(d*CONFIG.DIAS_MES_APROX)+i,s=2*e,o=2*t,c=r+s+o;document.getElementById('resumoTempoAverbado').textContent=`${r} dias`,document.getElementById('resumoFeriasAn').textContent=`${s} dias`,document.getElementById('resumoFeriasPremi').textContent=`${o} dias`,document.getElementById('resumoTotalAcreci').textContent=`${c} dias`,document.getElementById('resumoParametros').style.display=c>0?'block':'none'}
+    function formatarData(data) {
+        if (!data || isNaN(data.getTime())) return 'N/A';
+        const dia = String(data.getDate()).padStart(2, '0');
+        const mes = String(data.getMonth() + 1).padStart(2, '0');
+        const ano = data.getFullYear();
+        return `${dia}/${mes}/${ano}`;
+    }
 
-    function renderSimulacaoCenarios(a,d){const i=new Date(),e=calcTempoServico({dataInclusao:d.dataInclusao,dataReferencia:i}),t=calcTempoServico({dataInclusao:d.dataInclusao,dataReferencia:i,averbado:d.averbado,feriasDias:d.feriasDias,feriasPremioDias:d.feriasPremioDias}),r=calcAposentadoriaCompulsoria(d),s=calcAbonoPermanencia({dataCompulsoria:r.dataFinal});document.getElementById('tempoServicoSemAcr').textContent=`${e.ymd.years} a ${e.ymd.days} d`,document.getElementById('tempoServicoComAcr').textContent=`${t.ymd.years} a ${t.ymd.days} d`;const o=daysBetween(new Date(t.totalDias*CONFIG.DIAS_ANO_APROX/365),new Date((t.totalDias+CONFIG.DIAS_ARREDONDAMENTO)*CONFIG.DIAS_ANO_APROX/365));o>0&&(document.getElementById('tempoServicoComAcrArred').textContent=`Com arredondamento: +${CONFIG.DIAS_ARREDONDAMENTO} dias`,document.getElementById('tempoServicoComAcrArred').style.display='block'),document.getElementById('cardTempoComAcreci').style.display='block',document.getElementById('abonoSemAcr').textContent=formatarData(s.dataBase),document.getElementById('abonoComAcr').textContent=formatarData(a.abonoPermanencia.date);const c=daysBetween(a.abonoPermanencia.date,s.dataBase);document.getElementById('diasAntecipacaoAbono').textContent=c>0?`Antecipação: ${c} dias`:'',a.abonoPermanencia.dateArred&&daysBetween(a.abonoPermanencia.dateArred,a.abonoPermanencia.date)>0&&(document.getElementById('abonoComAcrArred').textContent=`Com arredondamento: ${formatarData(a.abonoPermanencia.dateArred)}`,document.getElementById('abonoComAcrArred').style.display='block'),document.getElementById('cardAbonoComAcr').style.display='block';const l=document.getElementById('tabelaComparativaBody');l.innerHTML='';const n=['Compulsória por Tempo','Compulsória por Idade','Voluntária Antecipada','Voluntária com Direitos','Abono de Permanência'],m=['compulsoriaPorTempo','compulsoriaPorIdade','voluntariaAntecipada','voluntariaComDireitos','abonoPermanencia'];let p=a.voluntariaAntecipada.dateArred;m.forEach((d,i)=>{const e=a[d],t=e.dateArred||e.date,r=daysBetween(t,a.compulsoriaPorTempo.date),s=t<p;s&&'compulsoriaPorTempo'!==d&&'compulsoriaPorIdade'!==d&&(p=t);const o=document.createElement('tr');o.innerHTML=`<td>${n[i]}</td><td class="${s?'melhor-opcao':''}">${formatarData(t)}</td><td>${r>0?`${r} dias`:'—'}</td>`,l.appendChild(o)}),document.getElementById('cardTabelaComparativa').style.display='block';const f=document.getElementById('cenariosResultadosContainer');f.innerHTML='',m.forEach((d,i)=>{const e=a[d],t=document.createElement('div');t.className='mb-4 p-3 bg-light rounded';let r='';e.dateArred&&daysBetween(e.dateArred,e.date)>0&&(r=`<div class="alert alert-warning mt-2"><strong>Arredondamento:</strong> ${formatarData(e.dateArred)} (-${CONFIG.DIAS_ARREDONDAMENTO} dias)</div>`),t.innerHTML=`<h5 class="text-danger">Cenário ${i+1} - ${n[i]}</h5><p><strong>Data:</strong> ${formatarData(e.date)}</p><p>${e.body}</p>${r}`,f.appendChild(t)}),document.getElementById('resultadosSimulacao').style.display='block'}
+    function calcTempoServico({ dataInclusao, dataReferencia, averbado, feriasDias, feriasPremioDias }) {
+        if (!dataInclusao || !dataReferencia) return { totalDias: 0, ymd: { years: 0, days: 0 } };
+        const diasAverbados = averbado ? (averbado.years * CONFIG.DIAS_ANO_APROX) + (averbado.months * CONFIG.DIAS_MES_APROX) + averbado.days : 0;
+        const diasServicoEfetivo = daysBetween(dataInclusao, dataReferencia);
+        const feriasEquivalente = (Number(feriasDias) || 0) * 2;
+        const feriasPremioEquivalente = (Number(feriasPremioDias) || 0) * 2;
+        const totalDias = Math.max(0, diasServicoEfetivo + diasAverbados + feriasEquivalente + feriasPremioEquivalente);
+        const anos = Math.floor(totalDias / CONFIG.DIAS_ANO_APROX);
+        const diasRestantes = totalDias % CONFIG.DIAS_ANO_APROX;
+        return { totalDias, ymd: { years: anos, days: diasRestantes } };
+    }
 
-    document.getElementById('dadosMilitarForm').addEventListener('submit',function(a){a.preventDefault(),toggleButtonProcessing('calcularInformacoesBtn',!0);const d=getInputs(!0);d?setTimeout(()=>{renderInitialResults(d),toggleButtonProcessing('calcularInformacoesBtn',!1)},300):toggleButtonProcessing('calcularInformacoesBtn',!1)}),document.querySelectorAll('.parametro-simulacao').forEach(a=>{a.addEventListener('change',atualizarResumoParametros),a.addEventListener('input',atualizarResumoParametros)}),document.getElementById('simularTodosCenarios').addEventListener('click',function(){toggleButtonProcessing('simularTodosCenarios',!0);const a=getInputs(!1);a?setTimeout(()=>{const d=simulateAllScenarios(a);renderSimulacaoCenarios(d,a),toggleButtonProcessing('simularTodosCenarios',!1)},300):toggleButtonProcessing('simularTodosCenarios',!1)})
+    function calcPedagioDias(dataInclusao) {
+        const tempoTotalServicoDias = CONFIG.ANOS_BASE_TRANSICAO * CONFIG.DIAS_ANO_APROX;
+        const tempoServicoEmDiasNaRef = daysBetween(dataInclusao, CONFIG.PEDAGIO_REFERENCE_DATE);
+        if (tempoServicoEmDiasNaRef >= tempoTotalServicoDias) return 0;
+        const diasFaltantes = tempoTotalServicoDias - tempoServicoEmDiasNaRef;
+        return Math.ceil(diasFaltantes * CONFIG.PEDAGIO_RATE);
+    }
+
+    function calcAbonoPermanencia({ dataCompulsoria }) {
+        if (!dataCompulsoria) return { dataBase: null, dataComArredondamento: null };
+        const dataComArredondamento = addDays(dataCompulsoria, -CONFIG.DIAS_ARREDONDAMENTO);
+        return { dataBase: dataCompulsoria, dataComArredondamento };
+    }
+
+    function calcAposentadoriaCompulsoria({ dataNascimento, dataInclusao, oficialSaudeCapelao }) {
+        if (!dataNascimento || !dataInclusao) return { dataFinal: null, regra: '' };
+        const idadeCorte = oficialSaudeCapelao ? CONFIG.IDADE_COMPULSORIA_QOS : CONFIG.IDADE_COMPULSORIA_GERAL;
+        const dataPorIdade = addYMD(dataNascimento, idadeCorte);
+        const regraIdade = `Compulsória por idade (${idadeCorte} anos)`;
+        let dataPorTempo, regraTempo;
+        if (dataInclusao > CONFIG.EC13954_DATE) {
+            dataPorTempo = addYMD(dataInclusao, CONFIG.ANOS_REGRA_GERAL);
+            regraTempo = `Regra Geral (${CONFIG.ANOS_REGRA_GERAL} anos de serviço)`;
+        } else {
+            const pedagioDias = calcPedagioDias(dataInclusao);
+            dataPorTempo = addDays(addYMD(dataInclusao, CONFIG.ANOS_BASE_TRANSICAO), pedagioDias);
+            regraTempo = `Regra de Transição (${CONFIG.ANOS_BASE_TRANSICAO} anos + ${pedagioDias} dias de pedágio)`;
+        }
+        return dataPorTempo < dataPorIdade ? { dataFinal: dataPorTempo, regra: regraTempo } : { dataFinal: dataPorIdade, regra: regraIdade };
+    }
+
+    function calcAposentadoriaVoluntaria({ dataInclusao, sexo, averbado, feriasDias, feriasPremioDias }) {
+        let dataProjetada, obsRule = '';
+        const diasAverbados = averbado ? (averbado.years * CONFIG.DIAS_ANO_APROX) + (averbado.months * CONFIG.DIAS_MES_APROX) + averbado.days : 0;
+        const diasFerias = (Number(feriasDias) || 0) * 2 + (Number(feriasPremioDias) || 0) * 2;
+        const totalDiasBonus = diasAverbados + diasFerias;
+        if (dataInclusao > CONFIG.EC13954_DATE) {
+            const dataAlvo = addYMD(dataInclusao, CONFIG.ANOS_REGRA_GERAL);
+            dataProjetada = addDays(dataAlvo, -totalDiasBonus);
+            obsRule = `Regra Pós-Reforma: ${CONFIG.ANOS_REGRA_GERAL} anos.`;
+        } else {
+            if (sexo === 'feminino') {
+                const vinteCincoAnosEmDias = CONFIG.ANOS_BASE_TRANSICAO_FEM * CONFIG.DIAS_ANO_APROX;
+                const tempoServicoNaCorteDias = daysBetween(dataInclusao, CONFIG.PEDAGIO_REFERENCE_DATE);
+                let acrescimoMeses = 0;
+                if (tempoServicoNaCorteDias < vinteCincoAnosEmDias) {
+                    const diasFaltantesNaCorte = vinteCincoAnosEmDias - tempoServicoNaCorteDias;
+                    const anosFaltantes = Math.floor(diasFaltantesNaCorte / CONFIG.DIAS_ANO_APROX);
+                    acrescimoMeses = Math.min(anosFaltantes * 4, 60);
+                    obsRule = `Regra feminina: 25 anos + ${acrescimoMeses} meses.`;
+                } else {
+                    obsRule = `Regra feminina: 25 anos (cumprido antes de 2022).`;
+                }
+                const dataAlvo = addYMD(dataInclusao, CONFIG.ANOS_BASE_TRANSICAO_FEM, acrescimoMeses);
+                dataProjetada = addDays(dataAlvo, -totalDiasBonus);
+            } else {
+                const pedagioDias = calcPedagioDias(dataInclusao);
+                obsRule = `Regra de Transição: 30 anos + ${pedagioDias} dias pedágio.`;
+                const dataAlvo = addDays(addYMD(dataInclusao, CONFIG.ANOS_BASE_TRANSICAO), pedagioDias);
+                dataProjetada = addDays(dataAlvo, -totalDiasBonus);
+            }
+        }
+        const dataComArredondamento = addDays(dataProjetada, -CONFIG.DIAS_ARREDONDAMENTO);
+        return { dataProjetada, dataComArredondamento, observacao: obsRule };
+    }
+
+    function simulateAllScenarios(inputs) {
+        const voluntariaAntecipada = calcAposentadoriaVoluntaria(inputs);
+        const dataSextoQuinquenio = addYMD(inputs.dataInclusao, CONFIG.ANOS_BASE_TRANSICAO);
+        const dataFinalVoluntariaDireitos = new Date(Math.max(voluntariaAntecipada.dataProjetada, dataSextoQuinquenio));
+        const dataComArredondamentoDireitos = addDays(dataFinalVoluntariaDireitos, -CONFIG.DIAS_ARREDONDAMENTO);
+        let cenario1Data, cenario1Body;
+        if (inputs.dataInclusao > CONFIG.EC13954_DATE) {
+            cenario1Data = addYMD(inputs.dataInclusao, CONFIG.ANOS_REGRA_GERAL);
+            cenario1Body = `Regra Geral: ${CONFIG.ANOS_REGRA_GERAL} anos. Sem tempo averbado/férias.`;
+        } else {
+            const pedagioDias = calcPedagioDias(inputs.dataInclusao);
+            cenario1Data = addDays(addYMD(inputs.dataInclusao, CONFIG.ANOS_BASE_TRANSICAO), pedagioDias);
+            cenario1Body = `Regra de Transição: 30 anos + ${pedagioDias} dias pedágio. Sem tempo averbado/férias.`;
+        }
+        return {
+            compulsoriaPorTempo: { date: cenario1Data, dateArred: cenario1Data, body: cenario1Body },
+            compulsoriaPorIdade: { date: addYMD(inputs.dataNascimento, inputs.oficialSaudeCapelao ? CONFIG.IDADE_COMPULSORIA_QOS : CONFIG.IDADE_COMPULSORIA_GERAL), dateArred: addYMD(inputs.dataNascimento, inputs.oficialSaudeCapelao ? CONFIG.IDADE_COMPULSORIA_QOS : CONFIG.IDADE_COMPULSORIA_GERAL), body: `Idade: ${inputs.oficialSaudeCapelao ? CONFIG.IDADE_COMPULSORIA_QOS : CONFIG.IDADE_COMPULSORIA_GERAL} anos.` },
+            voluntariaAntecipada: { date: voluntariaAntecipada.dataProjetada, dateArred: voluntariaAntecipada.dataComArredondamento, body: `Com tempo averbado/férias.<br><strong>Regra:</strong> ${voluntariaAntecipada.observacao}`, arredondamento: voluntariaAntecipada.dataComArredondamento },
+            voluntariaComDireitos: { date: dataFinalVoluntariaDireitos, dateArred: dataComArredondamentoDireitos, body: `Garante 6º quinquênio (${formatarData(dataSextoQuinquenio)}).` + (dataFinalVoluntariaDireitos.getTime() > voluntariaAntecipada.dataProjetada.getTime() ? ` Postergada.` : '') + `<br><strong>Regra:</strong> ${voluntariaAntecipada.observacao}`, arredondamento: dataComArredondamentoDireitos },
+            abonoPermanencia: { date: voluntariaAntecipada.dataProjetada, dateArred: voluntariaAntecipada.dataComArredondamento, body: `Direito ao Abono com tempo averbado/férias.<br><strong>Regra:</strong> ${voluntariaAntecipada.observacao}`, arredondamento: voluntariaAntecipada.dataComArredondamento }
+        };
+    }
+
+    function toggleButtonProcessing(buttonId, isProcessing) {
+        const button = document.getElementById(buttonId);
+        if (button) {
+            if (isProcessing) {
+                button.classList.add('processing');
+                button.disabled = true;
+            } else {
+                button.classList.remove('processing');
+                button.disabled = false;
+            }
+        }
+    }
+
+    function highlightTab() {
+        const simulacaoTab = document.getElementById('simulacao-tab');
+        simulacaoTab.classList.add('highlight-tab');
+        setTimeout(() => {
+            simulacaoTab.classList.remove('highlight-tab');
+        }, 3000);
+    }
+
+    function getInputs(isInitial = false) {
+        const dataNascimento = parseDateFromInput(document.getElementById('dataNascimento'));
+        const dataInclusao = parseDateFromInput(document.getElementById('dataInclusao'));
+        const sexo = document.getElementById('sexo').value;
+        if (!dataNascimento || !dataInclusao || !sexo) {
+            const modalMsg = document.getElementById('customAlertMessage');
+            modalMsg.textContent = 'Preencha Data de Nascimento, Data de Inclusão e Sexo antes de continuar.';
+            new bootstrap.Modal(document.getElementById('customAlert')).show();
+            return null;
+        }
+        const inputs = {
+            dataNascimento,
+            dataInclusao,
+            sexo,
+            oficialSaudeCapelao: document.getElementById('oficialSaudeCapelao').checked,
+        };
+        if (!isInitial) {
+            inputs.averbado = {
+                years: Number(document.getElementById('tempoAverbadoAnos').value) || 0,
+                months: Number(document.getElementById('tempoAverbadoMeses').value) || 0,
+                days: Number(document.getElementById('tempoAverbadoDias').value) || 0,
+            };
+            inputs.feriasDias = Number(document.getElementById('feriasNaoGozadas').value) || 0;
+            inputs.feriasPremioDias = Number(document.getElementById('feriasPremioNaoGozadas').value) || 0;
+        }
+        return inputs;
+    }
+
+    function renderInitialResults(inputs) {
+        const dataDeHoje = new Date();
+        const tempoServico = calcTempoServico({ dataInclusao: inputs.dataInclusao, dataReferencia: dataDeHoje });
+        document.getElementById('tempoServicoAtual').textContent = `${tempoServico.ymd.years} anos e ${tempoServico.ymd.days} dias`;
+        document.getElementById('tempoServicoAtualObs').textContent = `Na data de hoje ${formatarData(dataDeHoje)}`;
+        const compulsoriaResult = calcAposentadoriaCompulsoria(inputs);
+        document.getElementById('dataAposentadoriaCompulsoria').textContent = formatarData(compulsoriaResult.dataFinal);
+        document.getElementById('regraAposentadoriaCompulsoria').textContent = compulsoriaResult.regra;
+        const abonoResult = calcAbonoPermanencia({ dataCompulsoria: compulsoriaResult.dataFinal });
+        document.getElementById('dataAbonoPermanencia').textContent = formatarData(abonoResult.dataBase);
+        const arredondamentoContainer = document.getElementById('dataAbonoPermanenciaArredondamento');
+        if (arredondamentoContainer && abonoResult.dataComArredondamento) {
+            const label = document.getElementById('dataAbonoPermanenciaArredondamentoLabel');
+            const value = document.getElementById('dataAbonoPermanenciaArredondamentoValue');
+            if (label) label.textContent = `Com arredondamento (182 dias):`;
+            if (value) value.textContent = formatarData(abonoResult.dataComArredondamento);
+            arredondamentoContainer.style.display = 'block';
+        } else if (arredondamentoContainer) {
+            arredondamentoContainer.style.display = 'none';
+        }
+        const pedagioElem = document.getElementById('diasPedagio');
+        const pedagioObsElem = document.getElementById('diasPedagioObs');
+        if (inputs.dataInclusao > CONFIG.EC13954_DATE) {
+            pedagioElem.textContent = 'Não se aplica';
+            pedagioObsElem.textContent = 'Reforma 2019: sem pedágio.';
+        } else {
+            const pedagioDias = calcPedagioDias(inputs.dataInclusao);
+            pedagioElem.textContent = pedagioDias > 0 ? `${pedagioDias} dias` : '0 dias';
+            pedagioObsElem.textContent = `17% do tempo faltante em 01/01/2022.`;
+        }
+        let quinqueniosHtml = `<div class="row fw-bold text-secondary border-bottom pb-1 mb-2"><div class="col-4">Período</div><div class="col-4 text-center">Data</div><div class="col-4 text-end">Status</div></div>`;
+        for (let i = 1; i <= 7; i++) {
+            const dataQ = addYMD(inputs.dataInclusao, i * 5);
+            const status = dataQ <= dataDeHoje ? 'Adquirido' : 'Previsto';
+            quinqueniosHtml += `<div class="row align-items-center mb-1"><div class="col-4">${i}º Quinq:</div><div class="col-4 text-center">${formatarData(dataQ)}</div><div class="col-4 text-end"><span class="badge ${status === 'Adquirido' ? 'bg-success' : 'bg-warning'}">${status}</span></div></div>`;
+        }
+        document.getElementById('quinqueniosLista').innerHTML = quinqueniosHtml;
+        const callToAction = document.getElementById('callToActionSimulacao');
+        if (callToAction) {
+            callToAction.style.display = 'block';
+            callToAction.classList.add('fade-in');
+        }
+        highlightTab();
+    }
+
+    function atualizarResumoParametros() {
+        const anosAverbado = Number(document.getElementById('tempoAverbadoAnos').value) || 0;
+        const mesesAverbado = Number(document.getElementById('tempoAverbadoMeses').value) || 0;
+        const diasAverbado = Number(document.getElementById('tempoAverbadoDias').value) || 0;
+        const feriasAn = Number(document.getElementById('feriasNaoGozadas').value) || 0;
+        const feriasPremi = Number(document.getElementById('feriasPremioNaoGozadas').value) || 0;
+        const diasAverbadoTotal = (anosAverbado * CONFIG.DIAS_ANO_APROX) + (mesesAverbado * CONFIG.DIAS_MES_APROX) + diasAverbado;
+        const feriasAnConverti = feriasAn * 2;
+        const feriasPremioConverti = feriasPremi * 2;
+        const totalAcreci = diasAverbadoTotal + feriasAnConverti + feriasPremioConverti;
+        document.getElementById('resumoTempoAverbado').textContent = `${diasAverbadoTotal} dias`;
+        document.getElementById('resumoFeriasAn').textContent = `${feriasAnConverti} dias`;
+        document.getElementById('resumoFeriasPremi').textContent = `${feriasPremioConverti} dias`;
+        document.getElementById('resumoTotalAcreci').textContent = `${totalAcreci} dias`;
+        document.getElementById('resumoParametros').style.display = totalAcreci > 0 ? 'block' : 'none';
+    }
+
+    function renderSimulacaoCenarios(scenarios, inputs) {
+        const dataDeHoje = new Date();
+        const tempoServicoSemAcrec = calcTempoServico({ dataInclusao: inputs.dataInclusao, dataReferencia: dataDeHoje });
+        const tempoServicoComAcrec = calcTempoServico({ 
+            dataInclusao: inputs.dataInclusao, 
+            dataReferencia: dataDeHoje,
+            averbado: inputs.averbado,
+            feriasDias: inputs.feriasDias,
+            feriasPremioDias: inputs.feriasPremioDias
+        });
+
+        const compulsoriaResult = calcAposentadoriaCompulsoria(inputs);
+        const abonoSemAcrec = calcAbonoPermanencia({ dataCompulsoria: compulsoriaResult.dataFinal });
+
+        document.getElementById('tempoServicoSemAcr').textContent = `${tempoServicoSemAcrec.ymd.years} a ${tempoServicoSemAcrec.ymd.days} d`;
+        document.getElementById('tempoServicoComAcr').textContent = `${tempoServicoComAcrec.ymd.years} a ${tempoServicoComAcrec.ymd.days} d`;
+        const arredTempo = daysBetween(tempoServicoComAcrec.totalDias * CONFIG.DIAS_ANO_APROX / 365, (tempoServicoComAcrec.totalDias + CONFIG.DIAS_ARREDONDAMENTO) * CONFIG.DIAS_ANO_APROX / 365);
+        if (arredTempo > 0) {
+            document.getElementById('tempoServicoComAcrArred').textContent = `Com arredondamento: +${CONFIG.DIAS_ARREDONDAMENTO} dias`;
+            document.getElementById('tempoServicoComAcrArred').style.display = 'block';
+        }
+        document.getElementById('cardTempoComAcreci').style.display = 'block';
+
+        document.getElementById('abonoSemAcr').textContent = formatarData(abonoSemAcrec.dataBase);
+        document.getElementById('abonoComAcr').textContent = formatarData(scenarios.abonoPermanencia.date);
+        const diasAntecipacao = daysBetween(scenarios.abonoPermanencia.date, abonoSemAcrec.dataBase);
+        document.getElementById('diasAntecipacaoAbono').textContent = diasAntecipacao > 0 ? `Antecipação: ${diasAntecipacao} dias` : '';
+        if (scenarios.abonoPermanencia.dateArred && daysBetween(scenarios.abonoPermanencia.dateArred, scenarios.abonoPermanencia.date) > 0) {
+            document.getElementById('abonoComAcrArred').textContent = `Com arredondamento: ${formatarData(scenarios.abonoPermanencia.dateArred)}`;
+            document.getElementById('abonoComAcrArred').style.display = 'block';
+        }
+        document.getElementById('cardAbonoComAcr').style.display = 'block';
+
+        const tabelaBody = document.getElementById('tabelaComparativaBody');
+        tabelaBody.innerHTML = '';
+        const scenarioNames = ['Compulsória por Tempo', 'Compulsória por Idade', 'Voluntária Antecipada', 'Voluntária com Direitos', 'Abono de Permanência'];
+        const scenarioKeys = ['compulsoriaPorTempo', 'compulsoriaPorIdade', 'voluntariaAntecipada', 'voluntariaComDireitos', 'abonoPermanencia'];
+        let melhorData = scenarios.voluntariaAntecipada.dateArred;
+        scenarioKeys.forEach((key, index) => {
+            const scenario = scenarios[key];
+            const dataExibicao = scenario.dateArred || scenario.date;
+            const antecipacao = daysBetween(dataExibicao, scenarios.compulsoriaPorTempo.date);
+            const isMelhor = dataExibicao < melhorData;
+            if (isMelhor && key !== 'compulsoriaPorTempo' && key !== 'compulsoriaPorIdade') melhorData = dataExibicao;
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${scenarioNames[index]}</td>
+                <td class="${isMelhor ? 'melhor-opcao' : ''}">${formatarData(dataExibicao)}</td>
+                <td>${antecipacao > 0 ? `${antecipacao} dias` : '—'}</td>
+            `;
+            tabelaBody.appendChild(row);
+        });
+        document.getElementById('cardTabelaComparativa').style.display = 'block';
+
+        const container = document.getElementById('cenariosResultadosContainer');
+        container.innerHTML = '';
+        scenarioKeys.forEach((key, index) => {
+            const scenario = scenarios[key];
+            const div = document.createElement('div');
+            div.className = 'mb-4 p-3 bg-light rounded';
+            let arredHtml = '';
+            if (scenario.dateArred && daysBetween(scenario.dateArred, scenario.date) > 0) {
+                arredHtml = `<div class="alert alert-warning mt-2"><strong>Arredondamento:</strong> ${formatarData(scenario.dateArred)} (-${CONFIG.DIAS_ARREDONDAMENTO} dias)</div>`;
+            }
+            div.innerHTML = `
+                <h5 class="text-danger">Cenário ${index + 1} - ${scenarioNames[index]}</h5>
+                <p><strong>Data:</strong> ${formatarData(scenario.date)}</p>
+                <p>${scenario.body}</p>
+                ${arredHtml}
+            `;
+            container.appendChild(div);
+        });
+        document.getElementById('resultadosSimulacao').style.display = 'block';
+    }
+
+    document.getElementById('dadosMilitarForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        toggleButtonProcessing('calcularInformacoesBtn', true);
+        const inputs = getInputs(true);
+        if (!inputs) {
+            toggleButtonProcessing('calcularInformacoesBtn', false);
+            return;
+        }
+        setTimeout(() => {
+            renderInitialResults(inputs);
+            toggleButtonProcessing('calcularInformacoesBtn', false);
+        }, 300);
+    });
+
+    document.querySelectorAll('.parametro-simulacao').forEach(input => {
+        input.addEventListener('change', atualizarResumoParametros);
+        input.addEventListener('input', atualizarResumoParametros);
+    });
+
+    document.getElementById('simularTodosCenarios').addEventListener('click', function() {
+        toggleButtonProcessing('simularTodosCenarios', true);
+        const inputs = getInputs(false);
+        if (!inputs) {
+            toggleButtonProcessing('simularTodosCenarios', false);
+            return;
+        }
+        setTimeout(() => {
+            const scenarios = simulateAllScenarios(inputs);
+            renderSimulacaoCenarios(scenarios, inputs);
+            toggleButtonProcessing('simularTodosCenarios', false);
+        }, 300);
+    });
 })();
 </script>
 </body>
