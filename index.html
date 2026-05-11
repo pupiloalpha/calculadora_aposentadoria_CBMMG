@@ -531,6 +531,29 @@
                                         </div>
                                     </div>
                                 </div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingCalculosTres">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCalculosTres" aria-expanded="false" aria-controls="collapseCalculosTres">
+            Como interpretar a tabela comparativa na Simulação de Cenários?
+        </button>
+    </h2>
+    <div id="collapseCalculosTres" class="accordion-collapse collapse" aria-labelledby="headingCalculosTres" data-bs-parent="#calculosAccordion">
+        <div class="accordion-body">
+            <p>Na aba <strong>"2. Simulação de Cenários"</strong>, após executar a simulação, uma <strong>tabela comparativa</strong> exibe todos os cenários lado a lado para ajudá-lo a decidir o melhor momento para se aposentar.</p>
+            <p><strong>Colunas da tabela:</strong></p>
+            <ul>
+                <li><strong>Cenário:</strong> Nome do cenário simulado (Compulsória por Tempo, Compulsória por Idade, Voluntária Antecipada, Voluntária com Todos os Direitos e Abono de Permanência).</li>
+                <li><strong>Data de Saída:</strong> Data projetada para a aposentadoria (ou para o direito ao abono). Logo abaixo da data base, quando aplicável, é mostrada a <strong>data com arredondamento</strong> (antecipação de 182 dias, conforme regra legal).</li>
+                <li><strong>Antecipação em relação à Compulsória por Tempo:</strong> Indica quantos dias o cenário antecipa ou posterga em relação à data em que a aposentadoria compulsória por tempo de serviço ocorreria (Cenário 1). Valores positivos em verde significam antecipação; valores negativos em vermelho significam postergação.</li>
+            </ul>
+            <p><strong>Destaque:</strong> O cenário <strong>"Voluntária com Todos os Direitos"</strong> é destacado na tabela porque ele garante que a data de aposentadoria seja igual ou posterior à aquisição do 6º quinquênio (30 anos de serviço). Esse é o cenário recomendado para quem não quer abrir mão dos benefícios associados ao tempo de serviço completo.</p>
+            <p>Logo abaixo da tabela, uma mensagem complementar analisa a diferença entre a Voluntária Antecipada e a Voluntária com Todos os Direitos, orientando se vale a pena aguardar alguns dias ou meses para garantir o quinquênio adicional.</p>
+            <p><strong>Dica:</strong> Compare sempre as duas datas voluntárias. Se a diferença for pequena, pode ser vantajoso aguardar e obter o 6º quinquênio.</p>
+        </div>
+    </div>
+</div>
+
                             </div>
 
                             <h3 class="h6 text-danger mt-4">Perguntas Frequentes (FAQs):</h3>
@@ -1037,40 +1060,131 @@
         const abonoSemAcrec = calcAbonoPermanencia({ dataCompulsoria: compulsoriaResult.dataFinal });
 
         // Atualizar tempo de serviço
-        document.getElementById('tempoServicoSemAcr').textContent = `${tempoServicoSemAcrec.ymd.years} anos e ${tempoServicoSemAcrec.ymd.days} dias`;
-        document.getElementById('tempoServicoComAcr').textContent = `${tempoServicoComAcrec.ymd.years} anos e ${tempoServicoComAcrec.ymd.days} dias`;
+        //document.getElementById('tempoServicoSemAcr').textContent = `${tempoServicoSemAcrec.ymd.years} anos e ${tempoServicoSemAcrec.ymd.days} dias`;
+        //document.getElementById('tempoServicoComAcr').textContent = `${tempoServicoComAcrec.ymd.years} anos e ${tempoServicoComAcrec.ymd.days} dias`;
+        
+        // Função auxiliar para formatar tempo com arredondamento
+        function formatarTempoComArredondamento(years, days) {
+            const totalDias = years * 365 + days + 182;
+            const anosArred = Math.floor(totalDias / 365);
+            const diasArred = totalDias % 365;
+            return `${years} anos e ${days} dias<br><span class="text-muted">com arredondamento: ${anosArred} anos e ${diasArred} dias</span>`;
+        }
+
+        document.getElementById('tempoServicoSemAcr').innerHTML = formatarTempoComArredondamento(
+            tempoServicoSemAcrec.ymd.years,
+            tempoServicoSemAcrec.ymd.days
+        );
+        document.getElementById('tempoServicoComAcr').innerHTML = formatarTempoComArredondamento(
+            tempoServicoComAcrec.ymd.years,
+            tempoServicoComAcrec.ymd.days
+        );
+
         document.getElementById('cardTempoComAcreci').style.display = 'block';
 
         // Atualizar abono de permanência
-        document.getElementById('abonoSemAcr').textContent = formatarData(abonoSemAcrec.dataBase);
-        document.getElementById('abonoComAcr').textContent = formatarData(scenarios.abonoPermanencia.date);
+        //document.getElementById('abonoSemAcr').textContent = formatarData(abonoSemAcrec.dataBase);
+        //document.getElementById('abonoComAcr').textContent = formatarData(scenarios.abonoPermanencia.date);
+        
+        // Abono sem acréscimos – data base + arredondamento
+        const abonoSemArred = abonoSemAcrec.dataComArredondamento 
+            ? `<br><span class="text-muted">com arredondamento: ${formatarData(abonoSemAcrec.dataComArredondamento)}</span>` 
+            : '';
+        document.getElementById('abonoSemAcr').innerHTML = formatarData(abonoSemAcrec.dataBase) + abonoSemArred;
+        
+        // Abono com acréscimos – data base + arredondamento
+        const abonoComArred = scenarios.abonoPermanencia.arredondamento 
+            ? `<br><span class="text-muted">com arredondamento: ${formatarData(scenarios.abonoPermanencia.arredondamento)}</span>` 
+            : '';
+        document.getElementById('abonoComAcr').innerHTML = formatarData(scenarios.abonoPermanencia.date) + abonoComArred;
+
         const diasAntecipacao = daysBetween(scenarios.abonoPermanencia.date, abonoSemAcrec.dataBase);
         document.getElementById('diasAntecipacaoAbono').textContent = diasAntecipacao > 0 ? `Antecipação de ${diasAntecipacao} dias` : '';
         document.getElementById('cardAbonoComAcr').style.display = 'block';
 
         // Tabela comparativa
-        const tabelaBody = document.getElementById('tabelaComparativaBody');
-        tabelaBody.innerHTML = '';
+const tabelaBody = document.getElementById('tabelaComparativaBody');
+tabelaBody.innerHTML = '';
 
-        const scenarioNames = ['Compulsória por Tempo', 'Compulsória por Idade', 'Voluntária Antecipada', 'Voluntária com Todos os Direitos', 'Abono de Permanência'];
-        const scenarioKeys = ['compulsoriaPorTempo', 'compulsoriaPorIdade', 'voluntariaAntecipada', 'voluntariaComDireitos', 'abonoPermanencia'];
-        
-        let melhorData = scenarios.voluntariaAntecipada.date;
+const scenarioNames = [
+    'Compulsória por Tempo',
+    'Compulsória por Idade',
+    'Voluntária Antecipada',
+    'Voluntária com Todos os Direitos',
+    'Abono de Permanência'
+];
+const scenarioKeys = [
+    'compulsoriaPorTempo',
+    'compulsoriaPorIdade',
+    'voluntariaAntecipada',
+    'voluntariaComDireitos',
+    'abonoPermanencia'
+];
 
-        scenarioKeys.forEach((key, index) => {
-            const scenario = scenarios[key];
-            const antecipacao = daysBetween(scenario.date, scenarios.compulsoriaPorTempo.date);
-            const isMelhor = scenario.date < melhorData;
-            if (isMelhor && key !== 'compulsoriaPorTempo' && key !== 'compulsoriaPorIdade') melhorData = scenario.date;
-            
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${scenarioNames[index]}</td>
-                <td class="${isMelhor ? 'melhor-opcao' : ''}">${formatarData(scenario.date)}</td>
-                <td>${antecipacao > 0 ? `${antecipacao} dias` : '—'}</td>
-            `;
-            tabelaBody.appendChild(row);
-        });
+// Função auxiliar para formatar a célula da data (base + arredondamento se houver)
+function formatarDataTabela(scenario) {
+    let html = formatarData(scenario.date);
+    if (scenario.arredondamento) {
+        html += `<br><span class="text-muted small">com arred.: ${formatarData(scenario.arredondamento)}</span>`;
+    }
+    return html;
+}
+
+// Referência: data da compulsória por tempo (Cenário 1)
+const dataReferencia = scenarios.compulsoriaPorTempo.date;
+
+scenarioKeys.forEach((key, index) => {
+    const scenario = scenarios[key];
+    // Diferença em dias entre a data do cenário e a data de referência
+    // (positivo = antecipa, negativo = posterga)
+    const difDias = daysBetween(scenario.date, dataReferencia);
+
+    let antecipacaoHtml = '';
+    if (difDias > 0) {
+        antecipacaoHtml = `<span class="text-success fw-bold">Antecipa ${difDias} dias</span>`;
+    } else if (difDias < 0) {
+        antecipacaoHtml = `<span class="text-danger">Posterga ${Math.abs(difDias)} dias</span>`;
+    } else {
+        antecipacaoHtml = '—';
+    }
+
+    // Destacar apenas o Cenário 4 (Voluntária com Todos os Direitos)
+    const isMelhor = (key === 'voluntariaComDireitos');
+
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td class="${isMelhor ? 'fw-bold' : ''}">${scenarioNames[index]}</td>
+        <td class="${isMelhor ? 'melhor-opcao' : ''}">${formatarDataTabela(scenario)}</td>
+        <td>${antecipacaoHtml}</td>
+    `;
+    tabelaBody.appendChild(row);
+});
+
+// Exibe mensagem explicativa sobre o destaque
+const textoMelhor = document.getElementById('textoMelhorOpcao');
+const volAntecipada = scenarios.voluntariaAntecipada.date;
+const volDireitos = scenarios.voluntariaComDireitos.date;
+const difCenariosDias = daysBetween(volDireitos, volAntecipada); // se positivo, volDireitos depois de volAntecipada
+
+if (volDireitos.getTime() === volAntecipada.getTime()) {
+    textoMelhor.innerHTML = `
+        <strong>✅ Ótima notícia!</strong> A data da <strong>Voluntária Antecipada</strong> já coincide com a aquisição do 6º quinquênio. 
+        Portanto, você pode se aposentar na data destacada (${formatarData(volDireitos)}) com todos os direitos garantidos.
+    `;
+} else if (volDireitos > volAntecipada) {
+    textoMelhor.innerHTML = `
+        <strong>💡 Atenção:</strong> A <strong>Voluntária Antecipada</strong> (${formatarData(volAntecipada)}) 
+        ocorre <strong>${difCenariosDias} dias antes</strong> da data que garante o 6º quinquênio 
+        (${formatarData(volDireitos)}). Se optar pela data mais cedo, você pode perder o direito a esse adicional. 
+        Recomendamos avaliar se vale a pena aguardar até a data destacada na tabela (Voluntária com Todos os Direitos).
+    `;
+} else {
+    textoMelhor.innerHTML = `
+        <strong>📅 Verifique os cenários acima.</strong> A data com todos os direitos é anterior à antecipada? 
+        Isso pode ocorrer se o tempo de serviço já for suficiente para garantir o 6º quinquênio antes da data mínima de aposentadoria.
+    `;
+}
+textoMelhor.style.display = 'block';
         document.getElementById('cardTabelaComparativa').style.display = 'block';
 
         // Resultados detalhados
